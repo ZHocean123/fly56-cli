@@ -45,7 +45,7 @@ hello world from ./src/hello.ts!
     const {args, flags} = this.parse(CollectUrl)
 
     const dirPath = path.join('./', args.file)
-    const files = await allFilesInDir(dirPath)
+    const files = allFilesInDir(dirPath)
 
     const urls: string[] = []
     files.forEach(filePath => {
