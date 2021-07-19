@@ -19,7 +19,7 @@ $ npm install -g fly56-cli
 $ fly56-cli COMMAND
 running command...
 $ fly56-cli (-v|--version|version)
-fly56-cli/1.1.8 win32-x64 node-v14.17.1
+fly56-cli/1.1.9 win32-x64 node-v14.17.1
 $ fly56-cli --help [COMMAND]
 USAGE
   $ fly56-cli COMMAND
@@ -53,7 +53,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/collect-direct-end-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.8/src/commands/collect-direct-end-url.ts)_
+_See code: [src/commands/collect-direct-end-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.9/src/commands/collect-direct-end-url.ts)_
 
 ## `fly56-cli collect-direct-url [FILE]`
 
@@ -73,7 +73,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/collect-direct-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.8/src/commands/collect-direct-url.ts)_
+_See code: [src/commands/collect-direct-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.9/src/commands/collect-direct-url.ts)_
 
 ## `fly56-cli collect-fly-url [FILE]`
 
@@ -93,7 +93,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/collect-fly-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.8/src/commands/collect-fly-url.ts)_
+_See code: [src/commands/collect-fly-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.9/src/commands/collect-fly-url.ts)_
 
 ## `fly56-cli collect-weapp-url [FILE]`
 
@@ -113,7 +113,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/collect-weapp-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.8/src/commands/collect-weapp-url.ts)_
+_See code: [src/commands/collect-weapp-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.9/src/commands/collect-weapp-url.ts)_
 
 ## `fly56-cli hello [FILE]`
 
@@ -133,7 +133,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.8/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.9/src/commands/hello.ts)_
 
 ## `fly56-cli help [COMMAND]`
 
