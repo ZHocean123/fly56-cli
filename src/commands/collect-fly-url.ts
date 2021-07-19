@@ -57,7 +57,7 @@ hello world from ./src/hello.ts!
         urls.push(...directUrls?.map(url => '直采,' + url.match(/(?<=\surl: ")\S*(?=",)/)![0]))
       }
       // 飞象
-      const flyUrls = fileContent.match(/axiosClient\.request\({\s*url: "\S*",/g)
+      const flyUrls = fileContent.match(/(axios|axiosClient)\.request\({\s*url: "\S*",/g)
       if (flyUrls) {
         urls.push(...flyUrls?.map(url => '飞象,' + url.match(/(?<=\surl: ")\S*(?=",)/)![0]))
       }
