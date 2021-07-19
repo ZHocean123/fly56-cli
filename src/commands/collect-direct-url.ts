@@ -52,14 +52,14 @@ hello world from ./src/hello.ts!
       const fileContent = String(fs.readFileSync(filePath))
       // axios url
       // 直采
-      const directUrls = fileContent.match(/rpc\.request\({\s*url: "\S*"/g)
+      const directUrls = fileContent.match(/rpc\.request\({\s*url:\s*"\S*"/g)
       if (directUrls) {
-        urls.push(...directUrls?.map(url => '直采,' + url.match(/(?<=\surl: ")\S*(?=")/)![0]))
+        urls.push(...directUrls?.map(url => '直采,' + url.match(/(?<=\surl:\s*")\S*(?=")/)![0]))
       }
       // 飞象
-      const flyUrls = fileContent.match(/feixiangClient\.request\({\s*url: "\S*"/g)
+      const flyUrls = fileContent.match(/feixiangClient\.request\({\s*url:\s*"\S*"/g)
       if (flyUrls) {
-        urls.push(...flyUrls?.map(url => '飞象,' + url.match(/(?<=\surl: ")\S*(?=")/)![0]))
+        urls.push(...flyUrls?.map(url => '飞象,' + url.match(/(?<=\surl:\s*")\S*(?=")/)![0]))
       }
       // http curl url
       // 直采
