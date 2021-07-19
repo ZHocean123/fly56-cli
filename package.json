@@ -1,7 +1,7 @@
 {
   "name": "fly56-cli",
   "description": "飞象cli",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "ocean @ZHocean123",
   "bin": {
     "fly56-cli": "./bin/run"
