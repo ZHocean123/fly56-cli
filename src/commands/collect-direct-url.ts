@@ -22,7 +22,7 @@ function allFilesInDir(dir: string): string[] {
   return list
 }
 
-export default class CollectUrl extends Command {
+export default class CollectDirectUrl extends Command {
   static description = '收集项目接口url'
 
   static examples = [
@@ -42,7 +42,7 @@ hello world from ./src/hello.ts!
   static args = [{name: 'file'}]
 
   async run() {
-    const {args, flags} = this.parse(CollectUrl)
+    const {args, flags} = this.parse(CollectDirectUrl)
 
     const dirPath = path.join('./', args.file)
     const files = allFilesInDir(dirPath)

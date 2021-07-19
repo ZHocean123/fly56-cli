@@ -52,23 +52,23 @@ hello world from ./src/hello.ts!
       const fileContent = String(fs.readFileSync(filePath))
       // axios url
       // 直采
-      const directUrls = fileContent.match(/rpc\.request\({\s*url: "\S*",/g)
+      const directUrls = fileContent.match(/directClient\.request\({\s*url: "\S*",/g)
       if (directUrls) {
         urls.push(...directUrls?.map(url => '直采,' + url.match(/(?<=\surl: ")\S*(?=",)/)![0]))
       }
       // 飞象
-      const flyUrls = fileContent.match(/feixiangClient\.request\({\s*url: "\S*",/g)
+      const flyUrls = fileContent.match(/axiosClient\.request\({\s*url: "\S*",/g)
       if (flyUrls) {
         urls.push(...flyUrls?.map(url => '飞象,' + url.match(/(?<=\surl: ")\S*(?=",)/)![0]))
       }
       // http curl url
       // 直采
-      const curlDirectUrls = fileContent.match(/(?<=\sbaseUrl\s\+\s*")\S*(?=")/g)
+      const curlDirectUrls = fileContent.match(/(?<=\sdirectBaseUrl\s\+\s*")\S*(?=")/g)
       if (curlDirectUrls) {
         urls.push(...curlDirectUrls.map(item => '直采,' + item.split('?').shift() as string))
       }
       // 飞象
-      const curlFlyUrls = fileContent.match(/(?<=\sfeixiangBaseUrl\s\+\s*")\S*(?=")/g)
+      const curlFlyUrls = fileContent.match(/(?<=\sbaseUrl\s\+\s*")\S*(?=")/g)
       if (curlFlyUrls) {
         urls.push(...curlFlyUrls.map(item => '飞象,' + item.split('?').shift() as string))
       }
