@@ -52,7 +52,7 @@ hello world from ./src/hello.ts!
       const fileContent = String(fs.readFileSync(filePath))
       // axios url
       // 直采
-      const directUrls = fileContent.match(/(?<=\surl: ")\S*(?=",)/g)
+      const directUrls = fileContent.match(/(?<=\surl: ')\S*(?=',)/g)
       if (directUrls) {
         urls.push(...directUrls?.map(url => '直采,' + url))
       }
