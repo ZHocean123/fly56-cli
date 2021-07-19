@@ -51,18 +51,30 @@ hello world from ./src/hello.ts!
     files.forEach(filePath => {
       const fileContent = String(fs.readFileSync(filePath))
       // axios url
-      const ret = fileContent.match(/(?<=\surl: ")\S*(?=",)/g)
-      if (ret) {
-        urls.push(...ret)
+      // 直采
+      const directUrls = fileContent.match(/rpc\.request\({\s*url: "\S*",/g)
+      if (directUrls) {
+        urls.push(...directUrls?.map(url => '直采,' + url.match(/(?<=\surl: ")\S*(?=",)/)![0]))
+      }
+      // 飞象
+      const flyUrls = fileContent.match(/feixiangClient\.request\({\s*url: "\S*",/g)
+      if (flyUrls) {
+        urls.push(...flyUrls?.map(url => '飞象,' + url.match(/(?<=\surl: ")\S*(?=",)/)![0]))
       }
       // http curl url
-      const curlRet = fileContent.match(/(?<=`\${config\.(directCloud|feixiang)\.baseUrl})\S*(?=`)/g)
-      if (curlRet) {
-        urls.push(...curlRet.map(item => item.split('?').shift() as string))
+      // 直采
+      const curlDirectUrls = fileContent.match(/(?<=\sbaseUrl\s\+\s*")\S*(?=")/g)
+      if (curlDirectUrls) {
+        urls.push(...curlDirectUrls.map(item => '直采,' + item.split('?').shift() as string))
+      }
+      // 飞象
+      const curlFlyUrls = fileContent.match(/(?<=\sfeixiangBaseUrl\s\+\s*")\S*(?=")/g)
+      if (curlFlyUrls) {
+        urls.push(...curlFlyUrls.map(item => '飞象,' + item.split('?').shift() as string))
       }
     })
 
-    const outFilePath = path.join('./', `urls-${args.file.replace(/:|(\/)|\\/g, '-')}.txt`)
+    const outFilePath = path.join('./', `urls-${args.file.replace(/:|(\/)|\\/g, '-')}.csv`)
     fs.writeFileSync(outFilePath, urls.join('\n'))
     if (args.file && flags.force) {
       this.log(`you input --force and --file: ${args.file}`)

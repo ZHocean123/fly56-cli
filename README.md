@@ -19,7 +19,7 @@ $ npm install -g fly56-cli
 $ fly56-cli COMMAND
 running command...
 $ fly56-cli (-v|--version|version)
-fly56-cli/1.0.0 win32-x64 node-v14.17.1
+fly56-cli/1.1.0 win32-x64 node-v14.17.1
 $ fly56-cli --help [COMMAND]
 USAGE
   $ fly56-cli COMMAND
@@ -28,17 +28,18 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`fly56-cli collect-url [FILE]`](#fly56-cli-collect-url-file)
+* [`fly56-cli collect-direct-url [FILE]`](#fly56-cli-collect-direct-url-file)
+* [`fly56-cli collect-fly-url [FILE]`](#fly56-cli-collect-fly-url-file)
 * [`fly56-cli hello [FILE]`](#fly56-cli-hello-file)
 * [`fly56-cli help [COMMAND]`](#fly56-cli-help-command)
 
-## `fly56-cli collect-url [FILE]`
+## `fly56-cli collect-direct-url [FILE]`
 
 收集项目接口url
 
 ```
 USAGE
-  $ fly56-cli collect-url [FILE]
+  $ fly56-cli collect-direct-url [FILE]
 
 OPTIONS
   -f, --force
@@ -50,7 +51,27 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/collect-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.0.0/src/commands/collect-url.ts)_
+_See code: [src/commands/collect-direct-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.0/src/commands/collect-direct-url.ts)_
+
+## `fly56-cli collect-fly-url [FILE]`
+
+收集项目接口url
+
+```
+USAGE
+  $ fly56-cli collect-fly-url [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+
+EXAMPLE
+  $ fly56-cli collect-url
+  hello world from ./src/hello.ts!
+```
+
+_See code: [src/commands/collect-fly-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.0/src/commands/collect-fly-url.ts)_
 
 ## `fly56-cli hello [FILE]`
 
@@ -70,7 +91,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.0.0/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.0/src/commands/hello.ts)_
 
 ## `fly56-cli help [COMMAND]`
 
