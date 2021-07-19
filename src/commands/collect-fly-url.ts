@@ -72,10 +72,18 @@ hello world from ./src/hello.ts!
       if (curlDirectUrls) {
         urls.push(...curlDirectUrls.map(item => '直采,' + item.split('?').shift() as string))
       }
+      const curlDirectMixUrls = fileContent.match(/(?<=`\${directBaseUrl})\S*(?=`)/g)
+      if (curlDirectMixUrls) {
+        urls.push(...curlDirectMixUrls.map(item => '飞象,' + item.split('?').shift() as string))
+      }
       // 飞象
       const curlFlyUrls = fileContent.match(/(?<=\sbaseUrl\s\+\s*")\S*(?=")/g)
       if (curlFlyUrls) {
         urls.push(...curlFlyUrls.map(item => '飞象,' + item.split('?').shift() as string))
+      }
+      const curlFlyMixUrls = fileContent.match(/(?<=`\${baseUrl})\S*(?=`)/g)
+      if (curlFlyMixUrls) {
+        urls.push(...curlFlyMixUrls.map(item => '飞象,' + item.split('?').shift() as string))
       }
     })
 
