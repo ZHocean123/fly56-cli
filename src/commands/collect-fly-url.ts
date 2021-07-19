@@ -61,6 +61,11 @@ hello world from ./src/hello.ts!
       if (flyUrls) {
         urls.push(...flyUrls?.map(url => '飞象,' + url.match(/(?<=\surl: ")\S*(?=",)/)![0]))
       }
+      // 飞象
+      const flyMixUrls = fileContent.match(/(?<=((\s=)|(\s\?)|(\s:))\s")\/?[a-zA-X]+\/[a-zA-X/]*(?=")/g)
+      if (flyMixUrls) {
+        urls.push(...flyMixUrls?.map(url => '飞象,' + url.split('?').shift() as string))
+      }
       // http curl url
       // 直采
       const curlDirectUrls = fileContent.match(/(?<=\sdirectBaseUrl\s\+\s*")\S*(?=")/g)
