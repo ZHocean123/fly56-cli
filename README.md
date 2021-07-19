@@ -28,11 +28,32 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`fly56-cli collect-direct-end-url [FILE]`](#fly56-cli-collect-direct-end-url-file)
 * [`fly56-cli collect-direct-url [FILE]`](#fly56-cli-collect-direct-url-file)
 * [`fly56-cli collect-fly-url [FILE]`](#fly56-cli-collect-fly-url-file)
 * [`fly56-cli collect-weapp-url [FILE]`](#fly56-cli-collect-weapp-url-file)
 * [`fly56-cli hello [FILE]`](#fly56-cli-hello-file)
 * [`fly56-cli help [COMMAND]`](#fly56-cli-help-command)
+
+## `fly56-cli collect-direct-end-url [FILE]`
+
+收集项目接口url
+
+```
+USAGE
+  $ fly56-cli collect-direct-end-url [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+
+EXAMPLE
+  $ fly56-cli collect-url
+  hello world from ./src/hello.ts!
+```
+
+_See code: [src/commands/collect-direct-end-url.ts](https://github.com/ZHocean123/fly56-cli/blob/v1.1.4/src/commands/collect-direct-end-url.ts)_
 
 ## `fly56-cli collect-direct-url [FILE]`
 
